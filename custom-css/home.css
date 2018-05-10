@@ -1,0 +1,278 @@
+/* Estilos da pagina home (e algumas outras) */
+
+
+
+/*Nav style */
+
+/* Estylo principal nav */
+.my-nav {
+	background: #444444;
+	padding: 0.2rem 0rem 0rem 5rem;
+}
+/* Estilo do texto da nav */
+.navbar-light .navbar-nav .nav-link {
+	color: white;
+	font-weight: 500;
+	margin-left: 40px;
+}
+
+/* nav image */
+
+.img-nav {
+	width: 100px;
+	height: 40px;
+}
+
+.navbar-light .nome_usuario {
+	color: white;
+	font-weight: 500;
+	margin-left: 40px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+	color: white;
+	font-weight: bold;
+}
+
+/* Estilo da borda do botão colapse */
+.navbar-light .navbar-toggler {
+	border: 2px solid white;
+	background: white;
+}
+
+.my-collapse {
+	align-items: center;
+}
+
+.div-button-sair {
+	justify-content: center;
+	display: flex;
+}
+
+.div-otheruser-button-sair {
+	padding-left: 100px;
+	margin-top: 5px;
+}
+
+
+
+/* Estilo do botão sair do collapse */
+.navbar-collapse>a>button{
+	margin-left: 40px;
+}
+
+/* The side navigation menu */
+
+.botao-side {
+	width: 50%;
+	background: snow;
+	color: #444;
+	font-weight: bold;
+}
+
+.botao-side:hover{
+	background: #ff7f50;
+	color: white;
+}
+.row-botao{
+	justify-content: center;
+	margin-bottom: 10px;
+}
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #444444; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* The navigation menu links */
+.a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav h1 {
+	font-size: 20px;
+	color: white;
+	margin: 10px;
+    margin-bottom: 50px;
+
+}
+
+/* When you mouse over the navigation links, change their color */
+.a:hover {
+    color: #ff7f50;
+    text-decoration: none;
+
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* ESTILO DO CONTAINER PRINCIPAL */
+.espaco-container {
+	margin-top: 100px;
+}
+
+.div-filtro {
+	margin-top: 1.1%;
+}
+
+/* ESTILOS DAS INFORMAÇÕES DE ATRASO/ANDAMENTO */
+
+.div-info {
+
+	border-bottom: 2px solid grey;
+	margin-bottom: 20px;
+
+}
+
+.div-info>h4 {
+	font-size: 18px;
+}
+
+.cor-atraso {
+	color: red;
+	font-weight: bold;
+}
+.cor-andamento {
+	color: orange;
+	font-weight: bold;
+}
+.cor-finalizado {
+	color: green;
+	font-weight: bold;
+}
+
+.space-btn {
+	margin-bottom: 20px;
+}
+/* Grow Shadow */
+.hvr-grow-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: box-shadow, transform;
+  transition-property: box-shadow, transform;
+}
+.hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  font-weight: bold;
+}
+/* ESTILO DAS LEGENDAS */
+
+.row-legenda {
+	align-items: center;
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+.col-legenda {
+	align-items: center;
+}
+.row-legenda-2{
+	align-items: center;
+	justify-content: center;
+}
+
+.p-andamento{
+	width: 30px; height: 15px; border-radius: 20px; background: #ffff99; margin: 0px;
+}
+
+.p-finalizada {
+	width: 30px; height: 15px; border-radius: 20px; background: #00ff7f; margin: 0px;
+}
+
+.p-atrasada {
+	width: 30px; height: 15px; border-radius: 20px; background: #ff7979 ; margin: 0px
+}
+.p {
+	margin: 0px 0px 0px 10px; font-weight: bold;
+}
+
+/* ESTILO DA TABELA */
+.head-tr {
+	background: #444;
+}
+
+.head-tr > th {
+	color: white;
+}
+
+
+/* Estilo personalizado botões e div submeter */
+
+.botao_enviar {
+	color: #fff;
+	background-color: #2db72d;
+	display: flex;
+	font-weight: bold;
+	text-align: center;
+	white-space: nowrap;
+    vertical-align: middle;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    font-size: 1rem;
+}
+
+.div_enviar {
+	justify-content: center;
+	align-items: center;
+	display: flex
+}
+
+.excluir {
+	background-color: red;
+}
+
+/* Fim dos estilo de botão e div submeter */
+
+
+
+
+
+/* Fim dos estilos dos formulários dos detalhes */
+
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+@media only screen and (max-device-width: 500px){
+
+	.espaco-container {
+		margin-left: 30px;
+	}
+}

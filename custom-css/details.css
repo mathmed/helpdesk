@@ -1,0 +1,198 @@
+/* Estilos da página detalhes */
+
+
+
+/* container */
+
+.espaco-container-details {
+	margin-top: 80px;
+}
+
+/* Estilos cabecário dos detlahes */
+
+#cabecario h4, #formulario h4 {
+	font-size: 18px;
+	display: inline;
+	margin: 0px 5px 0px 55px;
+
+}
+
+
+.div-tipo-chamado {
+	justify-content: center;
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.espaco-titulo {
+	margin-bottom: 10px;
+}
+
+.cor-botao {
+	background: blue;
+}
+
+.n-comentarios {
+	margin-left: 4px;
+	color: red;
+}
+
+.span-info {
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+.linha-divisoria {
+	border: 1px solid grey;
+	margin: 30px 0px 30px 0px;
+}
+
+/*Fim dos estilos do caberacio */
+
+/* Início div dos formulários dos detalhes */
+
+.margem-cabecario{
+	margin-top: 20px;
+}
+.historico {
+	margin: 20px 0 20px 0;
+	font-size: 26px;
+}
+
+textarea {
+	margin-top: 20px;
+}
+
+input {
+	margin-top: 20px;
+}
+
+select {
+	margin-top: 20px;
+}
+
+/* Fim dos estilos dos formulários dos detalhes */
+
+
+
+/* Estilo da janela de comentários */
+
+#janela-comentarios {
+	margin: 20px 5px 20px 5px;
+	border-radius: 5px;
+	border: 2px solid grey;
+	background: #f6fefe;
+
+}
+
+#janela-comentarios h4 {
+	font-size: 18px;
+	margin: 0px 5px 0px 5px;
+	display: inline;
+}
+#janela-comentarios h3 {
+	font-size: 14px;
+	margin: 0px 5px 0px 5px;
+	display: inline;
+	font-weight: 0;
+}
+
+#cabecario-janela-comentarios {
+		
+	width: 100%;
+	display: inline-flex;
+	margin: 25px 0px 25px 0px;
+}
+
+#cabecario-janela-comentarios {
+	align-items: center;
+	justify-content: space-around;
+	width: 100%;
+}
+
+#corpo-janela-comentarios {
+		
+}
+
+#corpo-janela-comentarios h3 {
+	font-size: 12px;
+	margin: 0px 5px 0px 5px;
+	display: inline;	
+
+}
+
+#h3-div {
+	margin: 0px 10px 0px 10px;
+	padding-bottom: 30px;
+
+}
+
+
+#txt_consulta {
+	margin: 20px;
+    width: 92%;
+
+}
+
+.clickable-row:hover{
+	cursor: pointer;
+}
+
+/* Fim dos estilos da janela de comentários */
+
+/* estilos avaliação */
+
+.centralizar-texto {
+	align-items: center;
+	display: flex;
+}
+
+
+@media only screen and (max-device-width: 500px){
+
+	#txt_consulta {
+		margin-left: 10px;
+		width: 92%;
+	
+	}
+
+	.novo-comentario {
+		display: none;
+	}
+
+	.espaco-titulo {
+		margin: 0px;
+	}
+
+	#cabecario {
+		display: inline;
+	}
+
+	h1 {
+		font-size: 26px;
+		font-weight: bold;
+	}
+
+	.botao_enviar {
+		width: 70%;
+		margin-bottom: 10px;
+	}
+	.espaco-titulo {
+		margin-bottom: 5px;
+	}
+
+	#cabecario h4 {
+		margin: 0;
+	}
+
+	.historico_alteracoes {
+		display: none;
+	}
+
+	.fechar {
+		margin-bottom: 10px;
+	}
+}
+
+
+
