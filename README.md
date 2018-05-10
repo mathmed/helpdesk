@@ -15,7 +15,7 @@ $ git clone https://github.com/mathmed/helpdesk.git
 ou utilizando npm
 
 ```html
-$ npm install --save helpdesk-system
+$ npm install --save php-helpdesk-system
 ```
 
 Após adquirir o pacote é necessário em algum servidor podendo ser local.

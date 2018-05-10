@@ -1,0 +1,33 @@
+{
+    "name": "php-helpdesk-system",
+    "description": "Exemplo de um sistema helpdesk php",
+    "readmeFilename": "README.md" ,
+    "keywords": [
+      "helpdesk",
+      "php",
+      "html"
+    ],
+    "tags": [
+      "helpdesk",
+      "php"
+    ],
+    "version": "0.0.1",
+    "author": {
+      "name": "Mateus Medeiros",
+      "email": "mateusmedeiros252525@hotmail.com",
+      "homepage": "https://github.com/mathmed"
+    },
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/mathmed/helpdesk"
+    },
+    "dependencies":{
+      "sql.js":"0.2.0",
+      "crypto-js":"3.1.5"
+    },
+    "license": "MIT",
+    "engines": {
+      "node": ">=0.8.0"
+    },
+    "main": "index.php"
+  }
