@@ -79,7 +79,7 @@
 											    <a class="dropdown-item" href="novousuario.php"> <span class = 'fa fa-plus-square'></span> Cadastrar novo usuário</a>								
 											    <a class="dropdown-item" href="#"> <span class = 'fa fa-trash'></span>  Excluir usuário</a>
 											    <a class="dropdown-item" href="myreq.php"> <span class = 'fa fa-user'></span> Meus chamados</a>
-												<a class="dropdown-item" href="estatisticas.php"> <span class = 'fa fa-line-chart'></span> Estatísticas</a>
+												<a class="dropdown-item" href="estatisticas.php?tipo=geral"> <span class = 'fa fa-line-chart'></span> Estatísticas</a>
 
 											    <div class="dropdown-divider"></div>
 											    <div class = 'div-button-sair'>
