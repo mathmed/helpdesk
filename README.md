@@ -22,7 +22,7 @@ Após instalado é necessário realizar alguns ajustes para começar a utilizar.
 
 ## Como utilizar
 
-Em sua base de dados MySQL (phpmyadmin), utilize a função "importar" e selecione o arquivo `import.sql` localizado em `'/helpdesk/sql'`.
+Em sua base de dados MySQL (phpmyadmin), utilize a função "importar" e selecione o arquivo `chamados.sql` localizado em `'/helpdesk/sql'`.
 
 Feito isso, navegue até `'/helpdesk/db/config'` e preencha os campos com as informações do seu banco de dados.
 
