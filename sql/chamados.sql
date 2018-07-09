@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 10-Maio-2018 às 11:29
+-- Generation Time: 09-Jul-2018 às 09:04
 -- Versão do servidor: 5.7.22-0ubuntu0.16.04.1
 -- PHP Version: 7.0.28-0ubuntu0.16.04.1
 
@@ -43,6 +43,9 @@ CREATE TABLE `cw_chamados` (
   `nota` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `cw_chamados`
+--
 
 --
 -- Estrutura da tabela `cw_comentarios`
@@ -56,7 +59,12 @@ CREATE TABLE `cw_comentarios` (
   `data_comentario` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `cw_comentarios`
+--
 
+
+-- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `cw_historico`
@@ -70,6 +78,12 @@ CREATE TABLE `cw_historico` (
   `id_chamado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `cw_historico`
+--
+
+
+-- --------------------------------------------------------
 
 --
 -- Estrutura da tabela `cw_setores`
@@ -84,8 +98,7 @@ CREATE TABLE `cw_setores` (
 -- Extraindo dados da tabela `cw_setores`
 --
 
-INSERT INTO `cw_setores` (`id`, `setor`) VALUES
-(1, 'Padrão')
+INSERT INTO `cw_setores` (`id`, `setor`) VALUES (1, 'Padrão')
 
 -- --------------------------------------------------------
 
@@ -102,8 +115,7 @@ CREATE TABLE `cw_tipos` (
 -- Extraindo dados da tabela `cw_tipos`
 --
 
-INSERT INTO `cw_tipos` (`id`, `tipo_chamado`) VALUES
-(3, 'Padrão')
+INSERT INTO `cw_tipos` (`id`, `tipo_chamado`) VALUES (3, 'Padrão');
 
 -- --------------------------------------------------------
 
@@ -120,9 +132,7 @@ CREATE TABLE `cw_unidades` (
 -- Extraindo dados da tabela `cw_unidades`
 --
 
-INSERT INTO `cw_unidades` (`id`, `unidade`) VALUES
-(1, 'Padrão')
-
+INSERT INTO `cw_unidades` (`id`, `unidade`) VALUES (1, 'Padrão');
 -- --------------------------------------------------------
 
 --
@@ -145,7 +155,8 @@ CREATE TABLE `cw_usuarios` (
 --
 
 INSERT INTO `cw_usuarios` (`id`, `email`, `usuario`, `senha`, `nome`, `setor`, `cargo`, `sede`) VALUES
-(1, '', 'admin', 'admin', 'ADM', 1, 2, 1)
+(1, 'email@email.com', 'admin', 'admin', 'Mateus Medeiros', 1, 2, 1),
+
 
 --
 -- Indexes for dumped tables
