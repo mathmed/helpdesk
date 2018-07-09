@@ -480,11 +480,12 @@
 							</a>
 						</li>
 
-						<?php 
+						<?php
+							$estilo = '';
+							$bloq_prox = '';
+							$bloq_ant = '';
+							
 							for($i=0; $i<$tp; $i++){
-								$estilo = '';
-								$bloq_prox = '';
-								$bloq_ant = '';
 								if($pagina == $i) $estilo = "active";
 								
 								if($pagina+1 == $tp) $bloq_prox = "style = 'pointer-events: none; color: grey;'";	
