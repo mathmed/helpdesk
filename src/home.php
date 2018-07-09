@@ -451,6 +451,24 @@
 					</tbody>
 				</table>
 
+				<?php //pegar url
+
+				if(isset($_GET['dateIn']) || isset($_GET['dateFn'])){
+
+					$urlAtual = $_SERVER['REQUEST_URI'];
+					$urlAtual1 = explode("?", $urlAtual);
+					$urlAtual2 = explode("%", $urlAtual1[1]);
+					if(substr($urlAtual2[0], -1) != '&'){
+
+						$url = $urlAtual2[0].'&';
+					}else{
+
+						$url = $urlAtual2[0];
+
+					}
+				}else{
+					$url = '';
+				} ?>
 				<!-- INÍCIO DO CÓDIGO DE NAVEGÃÇÃO -->
 
 				<nav>
