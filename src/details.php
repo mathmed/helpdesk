@@ -69,7 +69,7 @@
 
 			}else{
 
-				$acesso_status = "disabled";
+				$acesso_status = "onclick='return false;'";
 				$acesso_prazo = "readonly";
 				$acesso_grau = false;
 
@@ -89,7 +89,7 @@
 			$acesso_nota = false;
 
 		}else{
-			$acesso_status = "disabled";
+			$acesso_status = "onclick='return false;'";
 			$acesso_responsavel = false;
 			$usuario_logado = "readonly";
 			$acesso_prazo = "readonly";

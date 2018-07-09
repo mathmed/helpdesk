@@ -85,7 +85,7 @@
 	$acoes  = array(1 => "alterou a descrição", 2 => "alterou o prazo", 3 => "encaminhou o chamado", 4 => "alterou o status", 5 => "alterou a prioridade" );
 
 
-	($finalizado) ? $status = "status_atual = 'Finalizado'" : $status = "status_atual = '".$prazo."'";
+	($finalizado) ? $status = "status_atual = 'Finalizado'" : $status = "status_atual = '".$query['status_atual']."'";
 
 	
 	$query = "UPDATE cw_chamados SET descricao = '$descricao', prazo = '$prazo', responsavel = $responsavel, grau = $prioridade,".$status." WHERE id = $id";
