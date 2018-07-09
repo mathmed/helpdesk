@@ -143,7 +143,9 @@
 				</div>
 
 				<div id = 'div_sg'>
-					<form id = 'form-enviar-dados-sg' action = '../system/insert/newRequest.php' method = 'post'>
+					<form id = 'form-enviar' action = '../system/insert/newRequest.php' method = 'post'>
+
+						<input type = 'hidden' id = 'tipo_chamado' name = 'tipo_chamado' value = '<?php echo $tipo; ?>'>
 
 						<!-- INPUT ESCONDIDO PARA ARMAZENAR O TIPO DE REQUISIÇÃO -->
 						<div style = 'display: none'>

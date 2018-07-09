@@ -21,6 +21,7 @@
 	$unidade = $_POST['unidade'];
 	$setor = $_POST['setor'];
 	$emissor = $_POST['solicitante'];
+	$tipo_chamado = $_POST['tipo_chamado'];
 
 	/* criando uma data atual */	
 
@@ -82,15 +83,15 @@
 
 			$email = new email();
 			$email->sendEmail($todos_envolvidos, '1', 2, $descricao);
-			header('Location: ../../src/chamado.php?sucesso=1');
+			header("Location: ../../src/chamado.php?tipo=$tipo_chamado&sucesso=1");
 
 		}else{
 			
-			header('Location: ../../src/chamado.php?sucesso=0');
+			header("Location: ../../src/chamado.php?tipo=$tipo_chamado&sucesso=0");
 		}
 		
 	}else{
-		header('Location: ../../src/chamado.php?sucesso=2');
+		header("Location: ../../src/chamado.php?tipo=$tipo_chamado&sucesso=2");
 	}
 	
 ?>
