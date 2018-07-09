@@ -70,6 +70,5 @@
 				
 				header('Location: ../../src/details.php?id='.$id_chamado.'&sucesso=0');
 			}
-
-	
+			
 ?>	

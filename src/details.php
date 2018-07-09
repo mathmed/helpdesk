@@ -12,7 +12,7 @@
 
 	if(!isset($_SESSION['usuario'])){	
 		header('../Location: index.php');
-		}
+	}
 
 	/* recuperando informações sobre o usuário */
 
@@ -162,12 +162,11 @@
 				<meta http-equiv="X-UA-Compatible" content="IE=edge">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<title>Detalhes chamado - Helpdesk</title>
-				<link rel="shortcut icon" href="imagens/spo.png" type="image/x-icon"/>  <!-- Logo Helpdesk -->
 				<link href="../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 				<link rel="stylesheet" href="../custom-css/home.css">                  <!-- Estilos personalizados -->
 				<link rel="stylesheet" href="../custom-css/details.css">                  <!-- Estilos personalizados -->
 				<link rel="stylesheet" href="../assets/bootstrap/css/font-awesome.min.css">  <!-- Icone do font awesome -->
-				<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+				<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 				<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.quicksearch/2.3.1/jquery.quicksearch.js"></script>
 
 				<!-- script para tratar do sistema de avaliação do chamado -->
@@ -191,7 +190,6 @@
 						 
 						  $("#rateYo").rateYo()
 						    .on("rateyo.set", function (e, data) {
-						 		
 						        $.ajax({
 								url: '../system/insert/altera_nota.php',
                                 method: 'post',
@@ -222,6 +220,18 @@
 								}
 							})
 						})
+
+						/* FUNÇÕES PARA DESABILIDAR BOTÃO APÓS O CLICK */
+
+						$("#form-alterar-dados-chamado").submit(function () {
+							$("#btn_enviar").attr("disabled", true);
+							return true;
+						});
+
+						$("#form-enviar-comentario").submit(function () {
+							$("#btn-enviar-comentario").attr("disabled", true);
+							return true;
+						});
 
 					})
 
@@ -412,14 +422,12 @@
 								            <textarea name = 'mensagem' class="form-control" id="mensagem" rows = '10' maxlength="255" required></textarea>
 										  </div>
 
-								          <!-- Id oculto para enviar -->
-
 								         <div style = 'display: flex;'>
 											<textarea style = 'display: none;' name = 'id_enviar' id = 'id_enviar' type = 'text' class = 'form-control'><?php echo $_GET['id']; ?></textarea>
 										</div>
 										<div class="modal-footer form-group">
 								        	<button type="button" class="btn btn-secondary fechar" data-dismiss = 'modal' >Fechar</button>
-								        	<button type="submit" id = 'enviar_comentario' class="btn botao_enviar">Enviar comentário</button>
+								        	<button type="submit" id = 'btn-enviar-comentario' class="btn botao_enviar">Enviar comentário</button>
 								      	</div>
 								        </form>
 								      </div>
@@ -562,7 +570,7 @@
 									/* array auxiliar com grau's */
 									$graus = array(0 => "Não definido", 1 => "Emergência", 2 => "Urgência", 3 => "Compra de Produtos", 4 => "Serviços Terceirizados");
 
-									 if($acesso_grau){
+									if($acesso_grau){
 
 									?>
 
@@ -576,7 +584,6 @@
 												}else{
 													echo "<option value = $key>$value</option>";
 												}
-
 											} 
 										?>
 
@@ -667,7 +674,6 @@
 
 						</div>
 						<!-- FIM DO CONTAINER PRINCIPAL -->
-
 
 					<!-- CRÉDITOS -->
 					<p style="margin: 15% 0% 0% 0%;">

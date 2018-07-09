@@ -17,8 +17,6 @@
 	$email = $_POST['email'];
 	$login = $_POST['login'];
 
-
-
 	/* iniciando e executando a query */
 
 	$query = "SELECT usuario,cargo,setor_usuario FROM cw_usuarios WHERE usuario = '$login'";

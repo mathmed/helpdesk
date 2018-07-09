@@ -24,11 +24,4 @@ if(DBExecute($query)){
 
 }
 
-
-
-
-
-
-
-
 ?>

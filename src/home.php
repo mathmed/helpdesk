@@ -33,7 +33,7 @@
 
 	/* variáveis para auxilar na paginação */
 
-	$total_reg = 10;
+	$total_reg = 20;
 	$pagina = isset($_GET['pagina']) ? intval($_GET['pagina']) : 0; 
 	$items_pagina = $pagina * $total_reg;
 
@@ -94,7 +94,7 @@
 				<link href="../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 				<link rel="stylesheet" href="../custom-css/home.css">
 				<link rel="stylesheet" href="../assets/bootstrap/css/font-awesome.min.css">
-				<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+				<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 				<script type="text/javascript">
 
 					/* iniciando o documento */
@@ -218,10 +218,6 @@
 					</li>
 				</div>
 
-				<!-- verifica o cargo da corta para mostrar ou não informaçõe
-					os cargos 0 e 1 são: usuário compartilhado e geral respectivamente, então,
-					usuários com cargo maior que isso (donos e adms) podem visualizar essa parte -->
-										
 				<?php
 				if($_SESSION['cargo'] > 1 ){
 				
@@ -458,9 +454,10 @@
 				<!-- INÍCIO DO CÓDIGO DE NAVEGÃÇÃO -->
 
 				<nav>
+					<?php if($pagina == 0) $bloq_ant = "style = 'pointer-events: none; color: grey;'"; else $bloq_ant = '';	?>
 					<ul class = "pagination">
 						<li class = 'page-items'>
-							<a class = 'page-link' href="home.php?<?= $url; ?> pagina= <?php echo $pagina-1; ?>" arial-label = 'Previous'>
+							<a <?php echo $bloq_ant; ?> class = 'page-link' href="home.php?<?= $url; ?> pagina= <?php echo $pagina-1; ?>" arial-label = 'Previous'>
 								<span arial-hidden = 'true'>Anterior</span>
 							</a>
 						</li>
@@ -468,22 +465,24 @@
 						<?php 
 							for($i=0; $i<$tp; $i++){
 								$estilo = '';
-								if($pagina == $i){
-									$estilo = "active";
-								} ?>
+								$bloq_prox = '';
+								$bloq_ant = '';
+								if($pagina == $i) $estilo = "active";
+								
+								if($pagina+1 == $tp) $bloq_prox = "style = 'pointer-events: none; color: grey;'";	
+								
+								?>
 								<li class = "page-item <?php echo $estilo; ?>" ><a class = 'page-link' href="home.php?<?= $url; ?> pagina= <?php echo $i; ?>"><?php echo $i+1; ?></a></li>
 						<?php } ?>
 
 							<li clas = 'page-item'>
-								<a class = 'page-link' href="home.php?<?= $url; ?> pagina= <?php echo $pagina+1; ?>">
+								<a <?php echo $bloq_prox; ?> class = 'page-link' href="home.php?<?= $url; ?> pagina= <?php echo $pagina+1; ?>">
 									<span>Próximo</span>
 								</a>
 							</li>
 					</ul>
 				</nav>
-
 			</div>
-
 	</div> 
 	<!-- FIM DA DIV PRINCIPAL -->
 
@@ -494,7 +493,6 @@
 		Desenvolvido por <a href="https://www.facebook.com/mateus.medeiros.142035">Mateus Medeiros</a> - Versão beta
 	</p>
 
-	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script src="../assets/bootstrap/js/popper.js"></script>
 	<script src="../assets/bootstrap/js/bootstrap.min.js"></script>		
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>		

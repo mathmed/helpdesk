@@ -18,7 +18,7 @@
 
 	$nome_usuario = $_SESSION['nome'];
 	$cargo_usuario = $_SESSION['cargo'];
-	$error_success = isset($_GET['sucesso']) ? $_GET['sucesso'] : 2;
+	$error_success = isset($_GET['sucesso']) ? $_GET['sucesso'] : 3;
 	$tipo = $_GET['tipo'];
 
 	?>
@@ -30,11 +30,22 @@
 				<meta http-equiv="X-UA-Compatible" content="IE=edge">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<title>Novo chamado - Helpdesk</title>
-				<link rel="shortcut icon" href="../imagens/spo.png" type="image/x-icon"/>  <!-- Logo helpdesk -->
 				<link href="../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 				<link rel="stylesheet" href="../custom-css/home.css">                  <!-- Estilos personalizados -->
 				<link rel="stylesheet" href="../assets/bootstrap/css/font-awesome.min.css">  <!-- Icone do font awesome -->
-				<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+				<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+
+				<script type = "text/javascript">
+
+					/* bloquear o botão de submit ao clicar */
+					
+					$(document).ready(function () {
+						$("#form-enviar").submit(function () {
+							$("#btn_enviar-requisicao").attr("disabled", true);
+							return true;
+						});
+					});
+				</script>
 
 			</head>
 
@@ -77,14 +88,11 @@
 									</li>
 								</div>
 
-
 								<?php
 
 								/* VERIFICANDO O CARGO DO USUÁRIO PARA MOSTRAR OU NÃO INFORMAÇÕES */
 
-								if($cargo_usuario > 1){
-
-								?>
+								if($cargo_usuario > 1){ ?>
 			
 								<div class="dropdown">
 									<li class="nav-item">
@@ -128,7 +136,10 @@
 					<?php }else if($error_success == 0){?>
 						<div class="alert alert-danger" role="alert">Erro ao enviar a solicitação.</div>
 
+					<?php }else if($error_success == 2){?>
+						<div class="alert alert-danger" role="alert">Erro! Não existe nenhum atendente para este tipo de chamado, contate o administrador.</div>
 					<?php } ?>
+
 				</div>
 
 				<div id = 'div_sg'>
@@ -213,7 +224,6 @@
 			<p style="margin: 0.001% 0% 0% 0%;">
 				Desenvolvido por <a href="https://www.facebook.com/mateus.medeiros.142035">Mateus Medeiros</a> - Versão beta
 			</p>					
-			<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 			<script src="../assets/bootstrap/js/popper.js"></script>
 			<script src="../assets/bootstrap/js/bootstrap.min.js"></script>				
 		</body>

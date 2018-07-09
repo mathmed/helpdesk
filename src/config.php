@@ -17,7 +17,6 @@
 
 	/* recuperando algum erro ou sucesso */
 
-
 	$status = (!isset($_GET['status'])) ? '' : $_GET['status'];
 
 	/* recuperando o nome do usuário */
@@ -37,7 +36,6 @@
 				<meta http-equiv="X-UA-Compatible" content="IE=edge">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<title>Configurações - Helpdesk</title>
-				<link rel="shortcut icon" href="imagens/spo.png" type="image/x-icon"/> 
 				<link href="../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 				<link rel="stylesheet" href="../custom-css/home.css">
 				<link rel="stylesheet" href="../custom-css/config.css">
@@ -446,7 +444,6 @@
 	</p>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-	<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 	<script src="../assets/bootstrap/js/popper.js"></script>
 	<script src="../assets/bootstrap/js/bootstrap.min.js"></script>				
 	</body>

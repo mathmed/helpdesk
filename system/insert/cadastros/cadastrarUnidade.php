@@ -32,8 +32,4 @@ if(mysqli_fetch_assoc(DBExecute($query))){
 
 }
 
-
-
-
-
 ?>

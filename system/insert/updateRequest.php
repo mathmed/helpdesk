@@ -24,7 +24,6 @@
 
 	$pessoa_que_alterou = $_SESSION['id'];
 
-
 	/* verificando qual tipo de prioridade foi enviado (verificação do isnumeri por conta de ter dois inputs possívels, sendo um textarea com valor string e um select com valor inteiro) */
 
 	if(!is_numeric($prioridade)){
@@ -86,7 +85,7 @@
 	$acoes  = array(1 => "alterou a descrição", 2 => "alterou o prazo", 3 => "encaminhou o chamado", 4 => "alterou o status", 5 => "alterou a prioridade" );
 
 
-	($finalizado) ? $status = "status_atual = 'Finalizado'" : $status = "status_atual = 'Andamento'";
+	($finalizado) ? $status = "status_atual = 'Finalizado'" : $status = "status_atual = '".$prazo."'";
 
 	
 	$query = "UPDATE cw_chamados SET descricao = '$descricao', prazo = '$prazo', responsavel = $responsavel, grau = $prioridade,".$status." WHERE id = $id";
@@ -127,16 +126,11 @@
 					DBExecute($query);
 				}
 
-
-
 				/* Trecho de código para selecionar todos os envolvidos com a requisição em questão */
 
-				
 				$email = new email();
 				$todos_envolvidos = $email->selecionaEnvolvidos($id);
 				$email->sendEmail($todos_envolvidos, $id, 3, '');
-
-				
 
 				header('Location: ../../src/details.php?id='.$id.'&sucesso=1');
 

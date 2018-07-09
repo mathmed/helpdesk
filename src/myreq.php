@@ -40,7 +40,6 @@
 			<meta charset="utf-8">
 			<meta http-equiv="X-UA-Compatible" content="IE=edge">
 			<title>Meus chamados - Helpdesk</title>
-			<link rel="shortcut icon" href="../imagens/spo.png" type="image/x-icon"/>  <!-- Logo Helpdesk -->
 			<link href="../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 			<link rel="stylesheet" href="../custom-css/home.css">                  <!-- Estilos personalizados -->
 			<link rel="stylesheet" href="../assets/bootstrap/css/font-awesome.min.css">  <!-- Icone do font awesome -->
@@ -144,6 +143,10 @@
 							/* executando a query */
 							$showLista = DBExecute($queryLista);
 							
+							/* informações acerca da paginação */
+							$tr = mysqli_num_rows(DBExecute($queryListaTodos));
+							$tp = ceil($tr / $total_reg);
+							
 							/* percorrendo a query */
 
 							while($row = mysqli_fetch_assoc($showLista)){
@@ -216,6 +219,56 @@
 						</tbody>
 					</table>
 
+					<?php
+
+					/* pegando a url atual */
+
+					if(isset($_GET['dateIn']) || isset($_GET['dateFn'])){
+
+						$urlAtual = $_SERVER['REQUEST_URI'];
+						$urlAtual1 = explode("?", $urlAtual);
+						$urlAtual2 = explode("%", $urlAtual1[1]);
+						if(substr($urlAtual2[0], -1) != '&'){
+							$url = $urlAtual2[0].'&';
+						}else{
+							$url = $urlAtual2[0];
+						}
+					}else{
+						$url = '';
+					} ?>
+
+				<!-- INÍCIO DO CÓDIGO DE NAVEGÃÇÃO -->
+
+				<nav>
+					<?php if($pagina == 0) $bloq_ant = "style = 'pointer-events: none; color: grey;'"; else $bloq_ant = '';	?>
+					<ul class = "pagination">
+						<li class = 'page-items'>
+							<a <?php echo $bloq_ant; ?> class = 'page-link' href="myreq.php?<?= $url; ?> pagina= <?php echo $pagina-1; ?>" arial-label = 'Previous'>
+								<span arial-hidden = 'true'>Anterior</span>
+							</a>
+						</li>
+
+						<?php 
+							for($i=0; $i<$tp; $i++){
+								$estilo = '';
+								$bloq_prox = '';
+								$bloq_ant = '';
+								if($pagina == $i) $estilo = "active";
+								
+								if($pagina+1 == $tp) $bloq_prox = "style = 'pointer-events: none; color: grey;'";	
+								
+								?>
+								<li class = "page-item <?php echo $estilo; ?>" ><a class = 'page-link' href="myreq.php?<?= $url; ?> pagina= <?php echo $i; ?>"><?php echo $i+1; ?></a></li>
+						<?php } ?>
+
+							<li clas = 'page-item'>
+								<a <?php echo $bloq_prox; ?> class = 'page-link' href="myreq.php?<?= $url; ?> pagina= <?php echo $pagina+1; ?>">
+									<span>Próximo</span>
+								</a>
+							</li>
+					</ul>
+				</nav>
+
 				</div>
 			</div>
 			<!-- FIM DA DIV PRINCIPAL -->
@@ -225,7 +278,6 @@
 				Desenvolvido por <a href="https://www.facebook.com/mateus.medeiros.142035">Mateus Medeiros</a> - Versão beta
 			</p>					
 			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-			<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
 			<script src="../assets/bootstrap/js/popper.js"></script>
 			<script src="../assets/bootstrap/js/bootstrap.min.js"></script>				
 		</body>

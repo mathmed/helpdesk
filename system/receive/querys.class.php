@@ -7,13 +7,11 @@
 
 		public function dadosChamado($id_chamado) {
 
-
 			/* pegando todos os dados do bd */
 
 			$query = "SELECT * FROM cw_chamados WHERE id = $id_chamado";
 			$query = DBExecute($query);
 			$dados_chamado = mysqli_fetch_assoc($query);
-
 
 			/* verificando o nome do emissor (caso seja 0, significa que é conta geral) */
 
@@ -37,7 +35,6 @@
 			$setor = "SELECT setor FROM cw_setores WHERE id = $setor";
 			$setor = mysqli_fetch_assoc(DBExecute($setor));
 
-
 			/* verificando o status do chamado */
 
 			if($dados_chamado['status_atual'] == "Finalizado"){
@@ -48,27 +45,21 @@
 				$status = '';
 			}
 
-
 			/* verificando qual a unidade do chamado */
 
 			$sede = $dados_chamado['unidade'];
 			$sede = "SELECT unidade from cw_unidades WHERE id = $sede";
 			$sede = mysqli_fetch_assoc(DBExecute($sede))['unidade'];
 
-
 			/* array com as informações */
 
 			$array_dados = array('setor' => $setor['setor'] , 'responsavel' => $responsavel, 'nome' => $nome, 'dados_chamado' => $dados_chamado, 'unidade' => $sede, 'status' => $status );
 
-
 			return $array_dados;
-
 
 		}
 
 		public function dadosMensagem($id_chamado){
-
-
 
 			$array_mensagens = array();
 
@@ -76,10 +67,8 @@
 
 			$query = "SELECT * FROM cw_comentarios WHERE id_chamado = $id_chamado ORDER BY data_comentario DESC ";
 			$query = DBExecute($query);
-			
 
 			return $query;
-
 
 		}
 
@@ -99,7 +88,6 @@
 			while($row = mysqli_fetch_assoc($query)) {
 
 				array_push($retorno, $row);
-
 			}
 
 			return $retorno;
@@ -108,18 +96,18 @@
 
 		public function returnQuery($dateIn, $dateFn, $status, $items_pagina, $total_reg, $tipo){
 
-				/* função que retorna algumas querys que são utilizadas durante a aplicação */
-			
-				($status == 'Todos' || !$status) ? $string_status = 'setor > 0' : $string_status = "status_atual = '$status'";
-				($tipo == 'todas') ? $string_tipo = "setor > 0" : $string_tipo = "tipo = '$tipo'";
+			/* função que retorna algumas querys que são utilizadas durante a aplicação */
+		
+			($status == 'Todos' || !$status) ? $string_status = 'setor > 0' : $string_status = "status_atual = '$status'";
+			($tipo == 'todas') ? $string_tipo = "setor > 0" : $string_tipo = "tipo = '$tipo'";
 
-				$queryLista = "SELECT * FROM cw_chamados WHERE  $string_status AND  $string_tipo AND prazo BETWEEN '$dateIn' AND '$dateFn' ORDER BY id DESC LIMIT $items_pagina, $total_reg";
+			$queryLista = "SELECT * FROM cw_chamados WHERE  $string_status AND  $string_tipo AND prazo BETWEEN '$dateIn' AND '$dateFn' ORDER BY id DESC LIMIT $items_pagina, $total_reg";
 
-				$queryListaTodos = "SELECT * FROM cw_chamados WHERE $string_status AND $string_tipo AND  prazo BETWEEN '$dateIn' AND '$dateFn' ORDER BY id DESC";
+			$queryListaTodos = "SELECT * FROM cw_chamados WHERE $string_status AND $string_tipo AND  prazo BETWEEN '$dateIn' AND '$dateFn' ORDER BY id DESC";
 
-				$array_dados = array("queryLista" => $queryLista, "queryListaTodos" => $queryListaTodos);
+			$array_dados = array("queryLista" => $queryLista, "queryListaTodos" => $queryListaTodos);
 
-				return $array_dados;
+			return $array_dados;
 
 			}
 
@@ -181,9 +169,5 @@
 			return array('andamento' => $andamento, 'atrasado' => $atrasado, 'finalizado' => $finalizado);
 
 		}
-
-
 	}
-
-
 ?>

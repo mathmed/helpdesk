@@ -26,7 +26,6 @@
 
 		$query = "SELECT usuario FROM cw_usuarios WHERE usuario = '$login'";
 
-
 		/* se existe, enviar uma mensagem de erro */
 
 		if((mysqli_fetch_assoc(DBExecute($query)))){
@@ -53,7 +52,7 @@
 			$dados = array('login' => $login, 'senha' => $senha, 'nome' => $nome);
 			$obj->sendEmail($todos_envolvidos, $id_chamado, 4, $dados);
 
-			/* returning with a success message */
+			/* retornando mensagem */
 
 			header('Location: ../../src/novousuario.php?sucesso=1');
 		}

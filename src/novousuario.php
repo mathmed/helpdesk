@@ -31,11 +31,10 @@
 				<meta http-equiv="X-UA-Compatible" content="IE=edge">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<title>Cadastrar usuário - Disbecol</title>
-				<link rel="shortcut icon" href="../imagens/spo.png" type="image/x-icon"/>  <!-- Logo Helpdesk -->
 				<link href="../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 				<link rel="stylesheet" href="../custom-css/home.css">                  <!-- Estilos personalizados -->
 				<link rel="stylesheet" href="../assets/bootstrap/css/font-awesome.min.css">  <!-- Icone do font awesome -->
-				<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+				<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 			</head>
 			<body>
 
@@ -162,7 +161,7 @@
 									    <select name = 'setor' class="form-control" id="exampleInputSector">
 									  		<?php
 
-									  		/* verificando os setores existentes no banco de dados*/
+									  		/* verificando os setores existentes no banco de dados */
 
 									  		$query = DBExecute("SELECT * FROM cw_setores");
 
@@ -199,10 +198,6 @@
 									    <label for="exampleInputCargo">Tipo de usuário</label>
 									    <select name = 'cargo' class="form-control" id="exampleInputCargo">
 
-									    	<!-- verificando o level da conta para permitir criação de usuários
-												 por padrão, qualquer pessoas que tem acesso à essa página pode 
-												 criar um usuário comum ou login geral  -->
-
 									    	<option value = '0'>Login Geral</option>
 									    	<option value = '1'>Comum</option>
 									    	<?php
@@ -238,7 +233,6 @@
 				<p style="margin: 5% 0% 0% 0%;">
 					Desenvolvido por <a href="https://www.facebook.com/mateus.medeiros.142035">Mateus Medeiros</a> - Versão beta
 				</p>					
-				<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 				<script src="../assets/bootstrap/js/popper.js"></script>
 				<script src="../assets/bootstrap/js/bootstrap.min.js"></script>				
 				</body>

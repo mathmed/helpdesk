@@ -59,7 +59,6 @@
 				$auxiliar['Id'] = $id;
 				$auxiliar['Descrição'] = $descricao;
 
-
 				array_push($envolvidos, $auxiliar);
 
 		}

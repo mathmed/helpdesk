@@ -7,7 +7,6 @@
 	require "../../db/connection.php";
 	require "../../db/database.php";
 
-
 	/* recebendo informação via post */
 
 	$nota = $_POST['nota'];
@@ -19,6 +18,5 @@
 	/* executanto a query */
 
 	DBExecute($query);
-
 
 ?>

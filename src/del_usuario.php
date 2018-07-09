@@ -27,12 +27,10 @@
 				<meta http-equiv="X-UA-Compatible" content="IE=edge">
 				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<title>Excluir usuário - Disbecol</title>
-				<link rel="icon" href="../imagens/spo.png" type="image/x-icon"/>
-				<link rel="shortcut icon" href="../imagens/icon.png" type="image/x-icon"/> 
 				<link href="../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 				<link rel="stylesheet" href="../custom-css/home.css">                  
 				<link rel="stylesheet" href="../assets/bootstrap/css/font-awesome.min.css">  
-				<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+				<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
 			</head>
 
@@ -131,7 +129,6 @@
 						</div>
 
 						<div class = 'col-md-6'>
-							<!-- FORMULÁRIO PARA ENVIAR OS DADOS PARA O BACKEND -->
 
 							<form id = 'form-enviar-dados' action = '../system/insert/delUser.php' method = 'post'>
 								<div class="form-group">
@@ -162,7 +159,6 @@
 				<p style="margin: 15% 0% 0% 0%;">
 					Desenvolvido por <a href="https://www.facebook.com/mateus.medeiros.142035">Mateus Medeiros</a> - Versão beta
 				</p>					
-				<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 				<script src="../assets/bootstrap/js/popper.js"></script>
 				<script src="../assets/bootstrap/js/bootstrap.min.js"></script>				
 			</body>

@@ -92,9 +92,7 @@
                          </div>
                                 <!-- Div para aparecer erro e/ou esqueceu a senha -->
                                 <div style = 'padding-bottom: 20px;'>
-
                                     <h1 style = 'font-size: 16px; font-weight: bold; color: #FF0000'><?php if($erro == 1){ echo 'Usuário e/ou senha inválido(s)'; } ?></h1>
-
                                 </div>
 
                         </div>

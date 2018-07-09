@@ -65,13 +65,12 @@
 				<meta name="viewport" content="width=device-width, initial-scale=1">
 				<title>Estatísticas chamado - Helpdesk</title>
 
-				<link rel="shortcut icon" href="../imagens/spo.png" type="image/x-icon"/>  <!-- Logo Helpdesk -->
 				<link href="../assets/bootstrap/css/bootstrap.css" rel="stylesheet">
 				<link rel="stylesheet" href="../custom-css/home.css">                  <!-- Estilos personalizados -->
 				<link rel="stylesheet" href="../custom-css/details.css">                  <!-- Estilos personalizados -->
 				<link rel="stylesheet" href="../custom-css/estatisticas.css">                  <!-- Estilos personalizados -->
 				<link rel="stylesheet" href="../assets/bootstrap/css/font-awesome.min.css">  <!-- Icone do font awesome -->
-				<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+				<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 				<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 				<script type="text/javascript">
 
@@ -540,7 +539,6 @@
 				<p style="margin: 15% 0% 0% 0%;">
 					Desenvolvido por <a href="https://www.facebook.com/mateus.medeiros.142035">Mateus Medeiros</a> - Versão beta
 				</p>					
-				<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 				<script src="../assets/bootstrap/js/popper.js"></script>
 				<script src="../assets/bootstrap/js/bootstrap.min.js"></script>				
 				</body>
